@@ -14,17 +14,8 @@ jobs:
     services:
       # Label used to access the service container
       redis:
-        # Docker Hub image
-        image: redis
-        # Set health checks to wait until redis has started
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          # Maps port 6379 on service container to the host
-          - 6379:6379
+          image: redis:latest
+          command: ["redis-server", "--bind", "redis", "--port", "6379"]
 
     steps:
       # Downloads a copy of the code in your repository before running CI tests
