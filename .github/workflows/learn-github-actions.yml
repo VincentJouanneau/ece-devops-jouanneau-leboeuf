@@ -41,7 +41,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Connect to Redis
-        run: node test/dbClient.js
+        run: node src/dbClient.js
         env:
           REDIS_HOST: redis
           REDIS_PORT: 6379
