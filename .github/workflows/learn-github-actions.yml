@@ -14,8 +14,8 @@ jobs:
     services:
       # Label used to access the service container
       redis:
-          image: redis:latest
-          command: ["redis-server", "--bind", "redis", "--port", "6379"]
+        image: redis:latest
+        command: ["redis-server", "--bind", "redis", "--port", "6379"]
 
     steps:
       # Downloads a copy of the code in your repository before running CI tests
@@ -35,7 +35,7 @@ jobs:
         # a new Redis client.
         env:
           # The hostname used to communicate with the Redis service container
-          REDIS_HOST: localhost
+          REDIS_HOST: redis
           # The default Redis port
           REDIS_PORT: 6379
 
